@@ -11,7 +11,7 @@ $(function() {
             //通信が成功したときの処理
             if(data.results){
                 //データが取得できたとき、setData関数を呼び出す
-                setData(date.results[0]);
+                setData(data.results[0]);
             }else{
                 alert("該当するデータが見つかりませんでした");
             }
@@ -24,7 +24,7 @@ $(function() {
 
 function setData(data){
     //取得データを各HTML要素に代入
-    $('#prefecture').val(date.address1); //都道府県名
-    $('#city').val(date.address2);       //市区町村名
-    $('#address').val(date.address3);    //町域名
+    $('#prefecture').val(data.address1); //都道府県名
+    $('#city').val(data.address2);       //市区町村名
+    $('#address').val(data.address3);    //町域名
 }
